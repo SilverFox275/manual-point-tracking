@@ -36,3 +36,11 @@ function_write_corners(output_folder,video_name,frames(1))
 
 %% MANUAL TRACKING
 function_point_tracking(output_folder,video_name,frames,n_object)
+
+%% CONVERSION INTO THE NEW REFERENCE SYSTEM
+corner_csv_name=strcat('corners_',num2str(video_name(1:end-4)),'.csv');
+
+corners=table2array(readtable(strcat(output_folder,'\',corner_csv_name)));
+xy=table2array(readtable(strcat(output_folder,'\tracking_',video_name(1:end-4),'.csv')));
+
+function_reference_system_change(xy,output_folder,video_name,corners,n_object)
