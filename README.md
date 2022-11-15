@@ -4,7 +4,7 @@ The code reads a video and divides it into the desired number of frames.
 The user can click with the mouse on such frames to save the coordinates of the objects that need to be tracked.
 The code provides the possibility to convert the coordinates into the reference system defined by the user (by clicking on the four corners of the tracking region, assuming it is rectangular).
 
-manual_point_tracking.m is the main file that has to be run. The other functions in the subfolder execute specific commands.
+manual_point_tracking.m is the main file that has to be run. The other functions in the subfolder execute specific tasks.
 
 The INPUT PARAMETERS are the following:
 
