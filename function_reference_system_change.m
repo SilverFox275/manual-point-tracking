@@ -18,7 +18,7 @@ corner_csv_name=strcat('CORNERS_',num2str(video_name(1:end-4)),'.csv');
 corners=table2array(readtable(strcat(output_video_folder,'\',corner_csv_name)));
 
 %Uploading raw tracking coordinates
-xy=table2array(readtable(strcat(output_video_folder,'\TRACKED_RAW',video_name(1:end-4),'.csv')));
+xy=table2array(readtable(strcat(output_video_folder,'\TRACKED_RAW_',video_name(1:end-4),'.csv')));
 
 %Creating a new object for the new referenced coordinates
 new_xy=zeros(size(xy)); %coorditates in the new reference system
