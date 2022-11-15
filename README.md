@@ -18,7 +18,7 @@ The INPUT PARAMETERS are the following:
 
 The OUTPUT DATA are the following:
 -  a text file named 'input_parameters.txt' with all the setting parameters for the tracking, video parameters, date and time
--  a folder named "Frames" which contains all the images used for tracking in .jpg format
--  a CORNERS_###.csv file that contains the relative coordinates of the corners of the tracking region 
--  a TRACKED_RAW_###.csv file with all the relative coordinates of the tracked objects (referenced with the image dimensions; origin on the TOP LEFT corner)
--  a TRACKED_REFERENCED_###.csv file with all the relative coordinates of the tracked objects referenced to the tracking region (considered to be rectangular; origin on the TOP LEFT corner)
+-  a folder named 'Frames' which contains all the images used for tracking in .jpg format
+-  a 'CORNERS_###.csv' file that contains the relative coordinates of the corners of the tracking region 
+-  a 'TRACKED_RAW_###.csv' file with all the relative coordinates of the tracked objects (referenced with the image dimensions; origin on the TOP LEFT corner)
+-  a 'TRACKED_REFERENCED_###.csv' file with all the relative coordinates of the tracked objects referenced to the tracking region (considered to be rectangular; origin on the TOP LEFT corner)
