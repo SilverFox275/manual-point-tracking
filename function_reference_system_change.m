@@ -1,4 +1,4 @@
-function function_reference_system_change(xy,output_folder,video_name,corners,n_object)
+function function_reference_system_change(output_video_folder,video_name,n_object)
 
 %this function transforms the xy coordinates (originally referred in the
 %image reference system) to the new coordinates referenced within the
@@ -13,7 +13,14 @@ function function_reference_system_change(xy,output_folder,video_name,corners,n_
 % 3: BOTTOM RIGHT
 % 4: TOP RIGHT
 
+%Uploading corners coordinate
+corner_csv_name=strcat('CORNERS_',num2str(video_name(1:end-4)),'.csv');
+corners=table2array(readtable(strcat(output_video_folder,'\',corner_csv_name)));
 
+%Uploading raw tracking coordinates
+xy=table2array(readtable(strcat(output_video_folder,'\TRACKED_RAW',video_name(1:end-4),'.csv')));
+
+%Creating a new object for the new referenced coordinates
 new_xy=zeros(size(xy)); %coorditates in the new reference system
 new_xy(:,1)=xy(:,1);
 
@@ -60,18 +67,18 @@ o(2)=centre(2)-(Height*cos(rot_angle)+Width*sin(rot_angle))/2;
 R=[cos(rot_angle),-sin(rot_angle);sin(rot_angle),cos(rot_angle)];
 
 %stretching on x and y
-Sx=[Width,0;0,1];
-Sy=[1,0;0,Height];
+S=[1/Width,0;0,1/Height];
 
 for i=1:size(xy,1)
     for j=1:n_object
 %translation
-new_xy(i,2*j)=xy(i,2*j)+o(1);
-new_xy(i,2*j+1)=xy(i,2*j+1)+o(2);
+new_xy(i,2*j)=xy(i,2*j)-o(1);
+new_xy(i,2*j+1)=xy(i,2*j+1)-o(2);
 
-new_xy(i,2*j:2*j+1)=new_xy(i,2*j:2*j+1)*R*Sx*Sy;
+new_xy(i,2*j:2*j+1)=new_xy(i,2*j:2*j+1)*R*S;
     end
 end
 xy_csv=array2table(new_xy,'VariableNames',column_names);
 
-writetable(xy_csv,strcat(output_folder,'\referenced_',video_name(1:end-4),'.csv'))
+%saving the file
+writetable(xy_csv,strcat(output_video_folder,'\TRACKED_REFERENCED_',video_name(1:end-4),'.csv'))

@@ -1,7 +1,11 @@
-function function_point_tracking(output_folder,video_name,frames,n_object)
+function function_point_tracking(output_video_folder,video_name,frames,n_object)
 
 %function for tracking the objects in the frames by clicking on them
 %output is a .csv folder with the relative coordinates of the objects
+
+%appearing message
+msg_tracking = 'Click on the object to track';
+uiwait(msgbox(msg_tracking)) %waiting for a response to resume the run
 
 n_frames=size(frames,2);
 xy=zeros(n_frames,2*n_object+1); % coordinates of the fish
@@ -17,7 +21,7 @@ for i=1:n_frames
 
     figure('Name',strcat(num2str(i),'/',num2str(n_frames)))
 
-    I= imread(strcat(output_folder,'\Frames\\frame',num2str(frames(i)),'.jpg'));
+    I= imread(strcat(output_video_folder,'\Frames\\frame',num2str(frames(i)),'.jpg'));
 
     imshow(I);
     coord=ginput(n_object);
@@ -31,4 +35,4 @@ for i=1:n_frames
 end
 xy_csv=array2table(xy,'VariableNames',column_names);
 %after finish tracking an entire video, save a .csv file
-writetable(xy_csv,strcat(output_folder,'\tracking_',video_name(1:end-4),'.csv'))
+writetable(xy_csv,strcat(output_video_folder,'\TRACKED_RAW_',video_name(1:end-4),'.csv'))
