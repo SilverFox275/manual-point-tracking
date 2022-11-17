@@ -29,5 +29,5 @@ The output files are the following:
 -  a *'TRACKED_REFERENCED_###.csv'* file with all the relative coordinates of the tracked objects referenced to the tracking region, assumed rectangular (See (x'y') reference system in the figure below origin on the TOP LEFT corner)
 
 
-![Reference_system_change](Functions/Reference_system_change.jpg#center "Change of the reference system")
+![Reference_system_change](Functions/Reference_system_change.jpg#center "Change of the reference system")<br>
 *Change of the reference system (traslation, scaling and rotation)*
