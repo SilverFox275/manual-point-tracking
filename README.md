@@ -27,3 +27,5 @@ The output files are the following:
 -  a *'CORNERS_###.csv'* file that contains the relative coordinates of the corners of the tracking region 
 -  a *'TRACKED_RAW_###.csv'* file with all the relative coordinates of the tracked objects (referenced with the image dimensions; origin on the TOP LEFT corner)
 -  a *'TRACKED_REFERENCED_###.csv'* file with all the relative coordinates of the tracked objects referenced to the tracking region (considered to be rectangular; origin on the TOP LEFT corner)
+
+![Change of the reference system](Functions/Reference_system_change.jpg "Change of the reference system")
