@@ -20,11 +20,21 @@ corner=zeros(N_corners,2); % 2D matrix:
 
 figure('Name',video_name)
 
+% I= imread(strcat(output_video_folder,'\Frames\\frame',num2str(frame),'.jpg'));
+% I_text=text(I,[30 30], ...
+%     "Corner clicking order: 1:TOP-LEFT; 2:BOTTOM-LEFT; 3:BOTTOM-RIGHT; 4:TOP-RIGHT",...
+%     'BoxColor','white','FontSize',32);
+% imshow(I_text); % calling the image
+% corner(:,:)=ginput(N_corners); %with this command you are asked to click four times on the image
+% close
+
 I= imread(strcat(output_video_folder,'\Frames\\frame',num2str(frame),'.jpg'));
-I_text=insertText(I,[30 30], ...
-    "Corner clicking order: 1:TOP-LEFT; 2:BOTTOM-LEFT; 3:BOTTOM-RIGHT; 4:TOP-RIGHT",...
-    'BoxColor','white','FontSize',32);
-imshow(I_text); % calling the image
+imshow(I); % calling the image
+%text(30, 30,"Corner clicking order: 1:TOP-LEFT; 2:BOTTOM-LEFT; 3:BOTTOM-RIGHT; 4:TOP-RIGHT",'Color','Red','FontSize',16)
+str= "Corners clicking order: 1.TOP-LEFT --> 2.BOTTOM-LEFT --> 3.BOTTOM-RIGHT --> 4.TOP-RIGHT";
+dim=[.07 .9 .67 .045];
+annotation('rectangle',dim,'FaceColor','yellow','FaceAlpha',.5)
+annotation('textbox',dim,'String',str,'Color','Black','FontSize',13);
 corner(:,:)=ginput(N_corners); %with this command you are asked to click four times on the image
 close
 
@@ -37,5 +47,3 @@ corner_csv=array2table(corner,'VariableNames',{'relative_coordinates_X','relativ
 
 %writing .csv file
 writetable(corner_csv,strcat(output_video_folder,'\CORNERS_',num2str(video_name(1:end-4)),'.csv'));
-
-
