@@ -17,7 +17,8 @@ The input variables are the following:
 6.  tracking end point (seconds)
 7.  sampling frequency (frames/seconds)
 
-The OUTPUT DATA are the following:
+## Output data
+The output files are the following:
 -  a text file named 'input_parameters.txt' with all the setting parameters for the tracking, video parameters, date and time
 -  a folder named 'Frames' which contains all the images used for tracking in .jpg format
 -  a 'CORNERS_###.csv' file that contains the relative coordinates of the corners of the tracking region 
