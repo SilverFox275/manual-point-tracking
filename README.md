@@ -28,6 +28,6 @@ The output files are the following:
 -  a *'TRACKED_RAW_###.csv'* file with all the relative coordinates of the tracked objects. Coordinates are referenced with the image dimensions and orientation (See (xy) reference system in the figure below, origin on the TOP LEFT corner)
 -  a *'TRACKED_REFERENCED_###.csv'* file with all the relative coordinates of the tracked objects referenced to the tracking region, assumed rectangular (See (x'y') reference system in the figure below origin on the TOP LEFT corner)
 
-
+<p align=center>
 ![Reference_system_change](Functions/Reference_system_change.jpg#center "Change of the reference system")<br>
 *Change of the reference system (traslation, scaling and rotation)*
