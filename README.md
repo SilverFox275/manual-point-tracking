@@ -6,7 +6,8 @@ The code provides the possibility to convert the coordinates into the reference 
 
 manual_point_tracking.m is the main file that has to be run. The other functions in the subfolder execute specific tasks.
 
-The INPUT PARAMETERS are the following:
+## Input Parameters
+The input variables are the following:
 
 1.  the folder that contatins the videos;
 2.  output main folder to save all output data
