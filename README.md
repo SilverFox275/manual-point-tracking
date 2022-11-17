@@ -31,7 +31,3 @@ The output files are the following:
 
 ![Reference_system_change](Functions/Reference_system_change.jpg#center "Change of the reference system")
 *Change of the reference system (traslation, scaling and rotation)*
-Reference_system_change[src*='#center'] {
-    display: block;
-    margin: auto;
-}
