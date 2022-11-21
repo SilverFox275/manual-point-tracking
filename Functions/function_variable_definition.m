@@ -14,7 +14,7 @@ mkdir(output_video_folder)
 
 Video = VideoReader(strcat(video_folder,'\',video_name)); %reading the video file
 fps=Video.FrameRate; %frame rate of the video
-frames=track_start:track_fps:track_end; %specify the frames to track
+frames=track_start*fps:track_fps:fps*track_end; %specify the frames to track
 msg = sprintf('You are going to track %d frame images', size(frames,2));
 msgbox(msg)
 
