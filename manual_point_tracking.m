@@ -8,7 +8,7 @@ clear all
 video_folder='My_input_folder'; %folder with videos to track
 output_folder='My_output_main_folder'; %folder with output data
 video_name='My_video_name.mp4'; %full video name (with name.mp4)
-n_object=1; %number of objects to track in each frame
+track_id='My_video_1'; %ID of the tracking session, name of the subfolder with all output files 
 track_start=30; % starting point to track [seconds]
 track_end=60; % ending point to track [seconds]
 track_fps=5; %sampling frequency [frames per seconds]
@@ -18,7 +18,7 @@ track_fps=5; %sampling frequency [frames per seconds]
 %% VARIABLE DEFINITION
 
 addpath('Functions')
-[output_video_folder,Video,frames]=function_variable_definition(output_folder,video_folder,video_name,track_start,track_end,track_fps,n_object);
+[output_video_folder,Video,frames]=function_variable_definition(output_folder,video_folder,video_name,track_id,track_start,track_end,track_fps,n_object);
 
 % ------------------------------------------------------------------------------------------------------------------------
 %% FRAMES EXTRACTION
