@@ -4,7 +4,7 @@ function function_point_tracking(output_video_folder,video_name,frames,n_object)
 %output is a .csv folder with the relative coordinates of the objects
 
 %appearing message
-msg_tracking = 'Click on the object to track';
+msg_tracking = 'Click on the object(s) to track';
 uiwait(msgbox(msg_tracking)) %waiting for a response to resume the run
 
 n_frames=size(frames,2);
@@ -32,7 +32,7 @@ for i=1:n_frames
     end
     close
 
-end
 xy_csv=array2table(xy,'VariableNames',column_names);
-%after finish tracking an entire video, save a .csv file
+% save a .csv file
 writetable(xy_csv,strcat(output_video_folder,'\TRACKED_RAW_',video_name(1:end-4),'.csv'))
+end

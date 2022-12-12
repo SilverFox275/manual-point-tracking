@@ -20,21 +20,13 @@ corner=zeros(N_corners,2); % 2D matrix:
 
 figure('Name',video_name)
 
-% I= imread(strcat(output_video_folder,'\Frames\\frame',num2str(frame),'.jpg'));
-% I_text=text(I,[30 30], ...
-%     "Corner clicking order: 1:TOP-LEFT; 2:BOTTOM-LEFT; 3:BOTTOM-RIGHT; 4:TOP-RIGHT",...
-%     'BoxColor','white','FontSize',32);
-% imshow(I_text); % calling the image
-% corner(:,:)=ginput(N_corners); %with this command you are asked to click four times on the image
-% close
-
 I= imread(strcat(output_video_folder,'\Frames\\frame',num2str(frame),'.jpg'));
 imshow(I); % calling the image
-%text(30, 30,"Corner clicking order: 1:TOP-LEFT; 2:BOTTOM-LEFT; 3:BOTTOM-RIGHT; 4:TOP-RIGHT",'Color','Red','FontSize',16)
 str= "Corners clicking order: 1.TOP-LEFT --> 2.BOTTOM-LEFT --> 3.BOTTOM-RIGHT --> 4.TOP-RIGHT";
 dim=[.07 .9 .67 .045];
-annotation('rectangle',dim,'FaceColor','yellow','FaceAlpha',.5)
-annotation('textbox',dim,'String',str,'Color','Black','FontSize',13);
+annotation('textbox',dim,'String',str,'Color','Black',...
+    'FontSize',10,'FitBoxToText','on',...
+    'BackgroundColor','yellow', 'FaceAlpha', 0.4);
 corner(:,:)=ginput(N_corners); %with this command you are asked to click four times on the image
 close
 

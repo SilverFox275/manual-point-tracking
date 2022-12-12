@@ -74,7 +74,7 @@ for i=1:size(xy,1)
 %translation
 new_xy(i,2*j)=xy(i,2*j)-o(1);
 new_xy(i,2*j+1)=xy(i,2*j+1)-o(2);
-
+%rotation and stretching
 new_xy(i,2*j:2*j+1)=new_xy(i,2*j:2*j+1)*R*S;
     end
 end
