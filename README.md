@@ -14,10 +14,11 @@ The input variables are the following:
 1.  the folder that contatins the videos (*video_folder*);
 2.  output main folder to save all output data (*output_folder*)
 3.  name of the video to be tracked (*video_name*)
-4.  number of objects to track in each frame (*n_object*)
-5.  tracking start point [seconds] (*track_start*)
-6.  tracking end point [seconds] (*track_end*)
-7.  sampling frequency [frames/seconds] (*track_fps*)
+4.  ID of the tracking session (useful for multiple sessions over one video)
+5.  number of objects to track in each frame (*n_object*)
+6.  tracking start point [seconds] (*track_start*)
+7.  tracking end point [seconds] (*track_end*)
+8.  sampling frequency [frames/seconds] (*track_fps*)
 
 ## Output data
 
